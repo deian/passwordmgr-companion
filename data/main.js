@@ -1,16 +1,34 @@
 "use strict";
 
+self.on("context", function (node) {
+  var data = { url: node.baseURI };
+  data.formSubmitURL = node.action ? node.action : node.baseURI;
+  self.postMessage(data);
+  return true;
+});
+
 self.on("click", function (node, strData) {
 
-  console.log("strData: "+strData);
+  if (!strData) { return true; }
 
   var data = JSON.parse(strData);
 
-  var user = document.getElementById(data.usernameField);
-  var pass = document.getElementById(data.passwordField);
+  var parent = node.parentNode;
+
+  while (parent && node.type !== "FORM") { 
+    node = parent;
+    parent = node.parentNode; 
+  }
+
+  var user = node.querySelectorAll('input[id="'+data.usernameField+'"],'+
+                                   'input[name="'+data.usernameField+'"]')[0];
+  var pass = node.querySelectorAll(
+    'input[type=password][id="'+data.passwordField+'"],'+
+    'input[type=password][name="'+data.passwordField+'"]')[0];
+  console.log("user: "+user);
+  console.log("pass: "+pass);
   if (user) { user.value = data.username; }
   if (pass) { pass.value = data.password; }
-
 
   return true;
 });
