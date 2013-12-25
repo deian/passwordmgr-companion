@@ -1,8 +1,8 @@
 {
-  "name": "passwordmgr-autofill",
-  "fullName": "passwordmgr-autofill",
+  "name": "passwordmgr-companion",
+  "fullName": "Password Manager's Companion",
   "id": "jid1-xv9SjVW8JqlpDg",
-  "description": "Context menu for filling forms with saved credentials",
+  "description": "Context menu for filling forms with saved credentials.",
   "author": "Deian Stefan",
   "license": "MPL 2.0",
   "version": "0.1"
