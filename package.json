@@ -1,0 +1,9 @@
+{
+  "name": "passwordmgr-autofill",
+  "fullName": "passwordmgr-autofill",
+  "id": "jid1-xv9SjVW8JqlpDg",
+  "description": "Context menu for filling forms with saved credentials",
+  "author": "Deian Stefan",
+  "license": "MPL 2.0",
+  "version": "0.1"
+}
