@@ -32,8 +32,6 @@ self.on("click", function (node, strData) {
   var pass = node.querySelectorAll(
     'input[type=password][id="'+data.passwordField+'"],'+
     'input[type=password][name="'+data.passwordField+'"]')[0];
-  console.log("user: "+user);
-  console.log("pass: "+pass);
   if (user) { user.value = data.username; }
   if (pass) { pass.value = data.password; }
 
